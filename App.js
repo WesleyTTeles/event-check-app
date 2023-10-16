@@ -1,5 +1,6 @@
 import { useFonts } from "expo-font";
-import Main from "./src/Main";
+import { NavigationContainer } from "@react-navigation/native";
+import { Routes } from "./src/routes";
 
 export default function App() {
   const [isFontsLoader] = useFonts({
@@ -11,5 +12,9 @@ export default function App() {
   if (!isFontsLoader) {
     return null;
   }
-  return <Main />;
+  return (
+    <NavigationContainer>
+      <Routes />
+    </NavigationContainer>
+  );
 }

@@ -15,8 +15,8 @@ import {
 } from "./styles";
 
 import logo from "../../assets/images/logo.png";
-import Icon from "react-native-vector-icons/FontAwesome";
 import { CheckBox } from "react-native-elements";
+import { FontAwesome } from "@expo/vector-icons";
 
 export default function Login() {
   const [input, setInput] = useState("");
@@ -33,7 +33,7 @@ export default function Login() {
         </Text>
         <InputArea>
           <IconArea>
-            <Icon name="envelope" size={20} color={"#cda35c"} />
+            <FontAwesome name="envelope" size={20} color="#cda35c" />
           </IconArea>
           <Input placeholder="meuemail@meudominio.com.br" />
         </InputArea>
@@ -43,7 +43,7 @@ export default function Login() {
         </Text>
         <InputArea>
           <IconArea>
-            <Icon name="lock" size={24} color={"#cda35c"} />
+            <FontAwesome name="lock" size={24} color="#cda35c" />
           </IconArea>
 
           <Input
@@ -59,10 +59,10 @@ export default function Login() {
               setHidePassword(!hidePassword);
             }}
           >
-            <Icon
+            <FontAwesome
               name={hidePassword === true ? "eye-slash" : "eye"}
-              size={20}
-              color={"#cda35c"}
+              size={24}
+              color="#cda35c"
             />
           </IconTouch>
         </InputArea>

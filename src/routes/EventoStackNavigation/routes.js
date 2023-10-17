@@ -45,7 +45,7 @@ export const EventStackNavigator = () => (
       }}
     />
     <Stack.Screen
-      name="Eventos bertos"
+      name="Eventos Abertos"
       component={EventosAbertos}
       options={{
         headerTitleStyle: {

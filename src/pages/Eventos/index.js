@@ -10,7 +10,7 @@ import { Container } from "../Home/styles";
 import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-export default function Eventos({}) {
+export default function Eventos() {
   const navigation = useNavigation();
 
   const hanleNextPage = (route) => {

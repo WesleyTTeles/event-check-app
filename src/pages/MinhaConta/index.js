@@ -1,6 +1,6 @@
 import { Text } from "../../components/Text/Text";
 import React from "react";
-import { Container } from "../../Main/styles";
+import { Container } from "../Home/styles";
 
 export default function MinhaConta() {
   return (

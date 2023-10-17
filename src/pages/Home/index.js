@@ -1,6 +1,6 @@
 import { Text } from "../../components/Text/Text";
 import React from "react";
-import { Container } from "../../Main/styles";
+import { Container } from "./styles";
 
 export default function Home() {
   return (

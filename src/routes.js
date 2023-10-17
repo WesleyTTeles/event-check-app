@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "./pages/Home";
 import Eventos from "./pages/Eventos";
 import MinhaConta from "./pages/MinhaConta";
+
 import {
   Ionicons,
   MaterialIcons,

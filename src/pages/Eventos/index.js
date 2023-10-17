@@ -6,12 +6,15 @@ import CardsEventos from "../../components/CardsEventos";
 import { listNames } from "../../mock/ListaEventos/listNames";
 import { Text } from "../../components/Text/Text";
 import { Container } from "../Home/styles";
-import { Content } from "./styles";
-import { View } from "react-native";
 
-export default function Eventos() {
-  const hanleNextPage = (listName) => {
-    alert("Proxima Pagina");
+import { View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+
+export default function Eventos({}) {
+  const navigation = useNavigation();
+
+  const hanleNextPage = (route) => {
+    navigation.navigate(route);
   };
 
   return (

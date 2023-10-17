@@ -1,6 +1,6 @@
 import { useFonts } from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
-import { Routes } from "./src/routes";
+import { Routes } from "./src/routes/BottomTabNavigation/routes";
 
 export default function App() {
   const [isFontsLoader] = useFonts({

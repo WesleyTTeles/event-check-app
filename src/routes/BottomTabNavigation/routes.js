@@ -1,13 +1,15 @@
+import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Home from "./pages/Home";
-import Eventos from "./pages/Eventos";
-import MinhaConta from "./pages/MinhaConta";
 
 import {
   Ionicons,
   MaterialIcons,
   MaterialCommunityIcons,
-} from "@expo/vector-icons";
+} from "react-native-vector-icons";
+
+import Home from "../../pages/Home";
+import MinhaConta from "../../pages/MinhaConta";
+import { EventStackNavigator } from "../EventoStackNavigation/routes";
 
 const Tab = createBottomTabNavigator();
 
@@ -38,7 +40,7 @@ export function Routes() {
       />
       <Tab.Screen
         name="Eventos"
-        component={Eventos}
+        component={EventStackNavigator}
         options={{
           headerShown: false,
           tabBarIcon: ({ color, size }) => (

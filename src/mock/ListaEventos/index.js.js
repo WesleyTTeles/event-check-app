@@ -3,7 +3,7 @@ import logo2 from "../../assets/images/projetogerminar.png";
 import logo3 from "../../assets/images/cafeegestao.png";
 import logo4 from "../../assets/images/eventoaberto.png";
 
-export const listNames = [
+export const listaEventos = [
   {
     id: 1,
     logoSrc: logo1,

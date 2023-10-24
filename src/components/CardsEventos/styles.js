@@ -11,6 +11,6 @@ export const Container = styled.TouchableOpacity`
 `;
 
 export const LogoIcon = styled.Image`
-  width: 72px;
-  height: 72px;
+  width: 62px;
+  height: 62px;
 `;

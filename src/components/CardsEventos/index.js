@@ -5,20 +5,20 @@ import { Feather } from "@expo/vector-icons";
 
 import { Container, LogoIcon } from "./styles";
 
-export default function CardsEventos({ listNames, onNextPage }) {
+export default function CardsEventos({ listaEventos, onNextPage }) {
   return (
     <FlatList
-      data={listNames}
-      keyExtractor={(listName) => listName.id.toString()}
-      renderItem={({ item: listName }) => (
+      data={listaEventos}
+      keyExtractor={(listaEvento) => listaEvento.id.toString()}
+      renderItem={({ item: listaEvento }) => (
         <Container
           onPress={() => {
-            onNextPage(listName.route);
+            onNextPage(listaEvento.route);
           }}
         >
-          <LogoIcon source={listName.logoSrc} />
+          <LogoIcon source={listaEvento.logoSrc} />
           <Text size={16} color={"#FFFFFF"}>
-            {listName.name}
+            {listaEvento.name}
           </Text>
           <Feather name="arrow-right-circle" size={28} color="#CDA35C" />
         </Container>

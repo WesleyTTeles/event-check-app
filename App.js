@@ -12,6 +12,7 @@ export default function App() {
   if (!isFontsLoader) {
     return null;
   }
+
   return (
     <NavigationContainer>
       <Routes />

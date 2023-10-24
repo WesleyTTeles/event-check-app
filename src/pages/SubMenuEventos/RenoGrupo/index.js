@@ -1,20 +1,33 @@
 import React from "react";
-
 import { FlatList } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import { Text } from "../../../components/Text/Text";
-import { Container, InfoTabela } from "../styles";
-import { tabelas } from "../../../mock/Tabelas/renogrupo";
+import { useNavigation } from "@react-navigation/native";
 
-export default function RenoGrupo() {
+import { renogrupo } from "../../../mock/db/renogrupo";
+import { Container, InfoTabela } from "../styles";
+import { Text } from "../../../components/Text/Text";
+
+export default function TableRenoGrupo() {
+  const navigation = useNavigation(); // Obtenha o objeto de navegação
+
+  const handleTablePress = (tabelaId) => {
+    // Navegue para a página de detalhes de inscrições (TableDetail) com o identificador da tabela selecionada
+    navigation.navigate("CheckList", {
+      tabelaId,
+      renogrupo: renogrupo[tabelaId],
+    });
+  };
+
+  const tableKeys = Object.keys(renogrupo);
+
   return (
     <Container>
       <FlatList
-        data={tabelas}
-        keyExtractor={(tabela) => tabela.id}
-        renderItem={({ item: tabela }) => (
-          <InfoTabela>
-            <Text color={"#FFFFFF"}>{tabela.name}</Text>
+        data={tableKeys}
+        keyExtractor={(tabelaId) => tabelaId}
+        renderItem={({ item: tabelaId }) => (
+          <InfoTabela onPress={() => handleTablePress(tabelaId)}>
+            <Text color={"#FFFFFF"}>{tabelaId}</Text>
             <Feather name="arrow-right-circle" size={28} color="#CDA35C" />
           </InfoTabela>
         )}

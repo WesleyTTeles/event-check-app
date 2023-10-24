@@ -3,7 +3,7 @@ import React from "react";
 import Header from "../../components/Header";
 import CardsEventos from "../../components/CardsEventos";
 
-import { listNames } from "../../mock/ListaEventos/listNames";
+import { listaEventos } from "../../mock/ListaEventos/index.js";
 import { Text } from "../../components/Text/Text";
 import { Container } from "../Home/styles";
 
@@ -13,8 +13,8 @@ import { useNavigation } from "@react-navigation/native";
 export default function Eventos() {
   const navigation = useNavigation();
 
-  const hanleNextPage = (route) => {
-    navigation.navigate(route);
+  const hanleNextPage = (route, evento) => {
+    navigation.navigate(route, { evento });
   };
 
   return (
@@ -32,7 +32,7 @@ export default function Eventos() {
         </View>
       </Header>
       <View style={{ paddingHorizontal: 18 }}>
-        <CardsEventos onNextPage={hanleNextPage} listNames={listNames} />
+        <CardsEventos onNextPage={hanleNextPage} listaEventos={listaEventos} />
       </View>
     </Container>
   );

@@ -4,10 +4,11 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { MaterialIcons } from "react-native-vector-icons";
 
 import Eventos from "../../pages/Eventos";
-import CafeeGestao from "../../pages/SubMenuEventos/CafeeGestao";
+import TableCafeeGestao from "../../pages/SubMenuEventos/CafeeGestao";
 import ProjetoGerminar from "../../pages/SubMenuEventos/ProjetoGerminar";
 import RenoGrupo from "../../pages/SubMenuEventos/RenoGrupo";
 import EventosAbertos from "../../pages/SubMenuEventos/EventosAbertos";
+import TableDetail from "../../components/TableDetail";
 
 const Stack = createStackNavigator();
 
@@ -20,7 +21,7 @@ export const EventStackNavigator = () => (
     />
     <Stack.Screen
       name="Cafe & Gestão"
-      component={CafeeGestao}
+      component={TableCafeeGestao}
       options={{
         headerTitleStyle: {
           color: "#605F69",
@@ -60,6 +61,19 @@ export const EventStackNavigator = () => (
     <Stack.Screen
       name="Reno Grupo"
       component={RenoGrupo}
+      options={{
+        headerTitleStyle: {
+          color: "#605F69",
+          fontSize: 18,
+        },
+        headerBackImage: () => (
+          <MaterialIcons name="keyboard-arrow-left" size={28} color="#605F69" />
+        ),
+      }}
+    />
+    <Stack.Screen
+      name="CheckList"
+      component={TableDetail}
       options={{
         headerTitleStyle: {
           color: "#605F69",

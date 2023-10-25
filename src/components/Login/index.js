@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import { CheckBox } from "react-native-elements";
+import { FontAwesome } from "@expo/vector-icons";
+
+import logo from "../../assets/images/logo.png";
+
 import { Text } from "../Text/Text";
 import {
   Container,
@@ -14,9 +19,9 @@ import {
   RememberPassword,
 } from "./styles";
 
-import logo from "../../assets/images/logo.png";
-import { CheckBox } from "react-native-elements";
-import { FontAwesome } from "@expo/vector-icons";
+
+
+
 
 export default function Login() {
   const [input, setInput] = useState("");

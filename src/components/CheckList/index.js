@@ -1,11 +1,10 @@
-import React from "react";
-import { FlatList, View } from "react-native";
+import React, { useState, useMemo } from "react";
+import { FlatList } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { useRoute } from "@react-navigation/native";
 
 import { Text } from "../Text/Text";
-
-import { Table, TableContainer, IconAction, Container } from "./styles";
+import { Table, TableContainer, IconAction, Container, Tr, ViewName } from "./styles";
 
 import CardsInfoDetails from "../CardsInfoDetails";
 import SearchInput from "../SearchInput";
@@ -16,58 +15,55 @@ export default function CheckList() {
     route.params;
 
   const inscricoesDaTabela =
-    cafeegestao || eventosabertos || projetogeminar || renogrupo || [];
+    cafeegestao || eventosabertos || projetogeminar || renogrupo;
 
-  const totalInscricoes = inscricoesDaTabela.length;
+  const [list, setList] = useState(inscricoesDaTabela);
 
-  const totalAguardando = inscricoesDaTabela.filter(
-    (inscricao) => inscricao.status === "aguardando"
-  ).length;
-
-  const totalPresente = inscricoesDaTabela.filter(
-    (inscricao) => inscricao.status === "presente"
-  ).length;
+  const inscricaoStatusCounts = useMemo(() => {
+    return list.reduce((counts, inscricao) => {
+      counts[inscricao.status] = (counts[inscricao.status] || 0) + 1;
+      return counts;
+    }, {});
+  }, [list]);
 
   return (
     <Container>
       <CardsInfoDetails
-        totalInscricoes={totalInscricoes}
-        inscricaoAguardando={totalAguardando}
-        inscricaoPresente={totalPresente}
+        totalInscricoes={list.length}
+        inscricaoAguardando={inscricaoStatusCounts["aguardando"] || 0}
+        inscricaoPresente={inscricaoStatusCounts["presente"] || 0}
       />
 
-      <SearchInput />
+      <SearchInput inscricoesDaTabela={inscricoesDaTabela} setList={setList} />
 
       <TableContainer>
-        <Table>
-          <Text style={{ width: 20 }} weight="600" size={16}>
-            ID
-          </Text>
-          <Text style={{ width: 200 }} weight="600" size={16}>
-            Nome
-          </Text>
-          <Text style={{ width: 60 }} weight="600" size={16}>
-            Status
-          </Text>
-          <Text weight="600" size={16}>
-            Ação
-          </Text>
+        <Table style={{ borderBottomWidth: 0 }}>
+          <Tr style={{ width: 230 }}>
+            <Text weight="600">Nome</Text>
+          </Tr>
+          <Tr>
+            <Text weight="600">Status</Text>
+          </Tr>
+          <Tr>
+            <Text weight="600">Ação</Text>
+          </Tr>
         </Table>
         <FlatList
-          data={inscricoesDaTabela}
+          data={list}
           keyExtractor={(inscricao) => inscricao.id.toString()}
           renderItem={({ item: inscricao }) => (
             <Table>
-              <Text style={{ width: 20 }}>{inscricao.id}</Text>
-              <View>
-                <Text weight="600" size={16} style={{ width: 200 }}>
-                  {inscricao.name}
-                </Text>
-                <Text style={{ width: 200 }}>{inscricao.email}</Text>
-              </View>
-              <Text style={{ width: 90, textAlign: "center" }}>
-                {inscricao.status}
-              </Text>
+              <ViewName>
+                <Tr>
+                  <Text>{inscricao.name}</Text>
+                </Tr>
+                <Tr style={{ width: 205 }}>
+                  <Text>{inscricao.email}</Text>
+                </Tr>
+              </ViewName>
+              <Tr>
+                <Text style={{ textAlign: "center" }} >{inscricao.status}</Text>
+              </Tr>
               <IconAction>
                 <Feather name="check-circle" size={22} color="#43A53B" />
               </IconAction>
@@ -75,6 +71,6 @@ export default function CheckList() {
           )}
         />
       </TableContainer>
-    </Container>
+    </Container >
   );
 }

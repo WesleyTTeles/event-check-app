@@ -11,11 +11,23 @@ export const TableContainer = styled.View`
 `;
 
 export const Table = styled.View`
+  width: 100%;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  padding: 6px 0;
-  margin-bottom: 10px;
+  margin: 5px 0;
+  border-width: 0 0 1px 0;
+  border-color: #606F7E;
+  padding: 5px 0;
+`;
+
+export const Tr = styled.View`
+width: 80px;
+`;
+
+export const ViewName = styled.View`
+align-items: left;
+
 `;
 
 export const IconAction = styled.TouchableOpacity`

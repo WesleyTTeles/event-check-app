@@ -1,13 +1,12 @@
 import React from "react";
-
 import { createStackNavigator } from "@react-navigation/stack";
-import { MaterialIcons } from "react-native-vector-icons";
+import { Ionicons } from '@expo/vector-icons';
 
 import Eventos from "../../pages/Eventos";
 import TableCafeeGestao from "../../pages/SubMenuEventos/CafeeGestao";
-import ProjetoGerminar from "../../pages/SubMenuEventos/ProjetoGerminar";
-import RenoGrupo from "../../pages/SubMenuEventos/RenoGrupo";
-import EventosAbertos from "../../pages/SubMenuEventos/EventosAbertos";
+import TableProjetoGerminar from "../../pages/SubMenuEventos/ProjetoGerminar";
+import TableRenoGrupo from "../../pages/SubMenuEventos/RenoGrupo";
+import TableEventosAbertos from "../../pages/SubMenuEventos/EventosAbertos";
 import CheckList from "../../components/CheckList";
 
 const Stack = createStackNavigator();
@@ -20,6 +19,19 @@ export const EventStackNavigator = () => (
       options={{ headerShown: false }}
     />
     <Stack.Screen
+      name="Eventos Abertos"
+      component={TableEventosAbertos}
+      options={{
+        headerTitleStyle: {
+          color: "#605F69",
+          fontSize: 18,
+        },
+        headerBackImage: () => (
+          <Ionicons name="ios-arrow-back" size={24} color="#605F69" />
+        ),
+      }}
+    />
+    <Stack.Screen
       name="Cafe & Gestão"
       component={TableCafeeGestao}
       options={{
@@ -28,46 +40,34 @@ export const EventStackNavigator = () => (
           fontSize: 18,
         },
         headerBackImage: () => (
-          <MaterialIcons name="keyboard-arrow-left" size={28} color="#605F69" />
+          <Ionicons name="ios-arrow-back" size={24} color="#605F69" />
         ),
       }}
     />
     <Stack.Screen
       name="Projeto Germinar"
-      component={ProjetoGerminar}
+      component={TableProjetoGerminar}
       options={{
         headerTitleStyle: {
           color: "#605F69",
           fontSize: 18,
         },
         headerBackImage: () => (
-          <MaterialIcons name="keyboard-arrow-left" size={28} color="#605F69" />
+          <Ionicons name="ios-arrow-back" size={24} color="#605F69" />
         ),
       }}
     />
-    <Stack.Screen
-      name="Eventos Abertos"
-      component={EventosAbertos}
-      options={{
-        headerTitleStyle: {
-          color: "#605F69",
-          fontSize: 18,
-        },
-        headerBackImage: () => (
-          <MaterialIcons name="keyboard-arrow-left" size={28} color="#605F69" />
-        ),
-      }}
-    />
+
     <Stack.Screen
       name="Reno Grupo"
-      component={RenoGrupo}
+      component={TableRenoGrupo}
       options={{
         headerTitleStyle: {
           color: "#605F69",
           fontSize: 18,
         },
         headerBackImage: () => (
-          <MaterialIcons name="keyboard-arrow-left" size={28} color="#605F69" />
+          <Ionicons name="ios-arrow-back" size={24} color="#605F69" />
         ),
       }}
     />
@@ -80,7 +80,7 @@ export const EventStackNavigator = () => (
           fontSize: 18,
         },
         headerBackImage: () => (
-          <MaterialIcons name="keyboard-arrow-left" size={28} color="#605F69" />
+          <Ionicons name="ios-arrow-back" size={24} color="#605F69" />
         ),
       }}
     />

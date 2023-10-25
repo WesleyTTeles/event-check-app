@@ -1,10 +1,10 @@
 import styled from "styled-components/native";
 
 export const SearchWrapper = styled.View`
-  height: 80px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  height: 45px;
 `;
 
 export const Input = styled.TextInput`

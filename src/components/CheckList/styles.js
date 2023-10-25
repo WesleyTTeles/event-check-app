@@ -1,8 +1,13 @@
 import styled from "styled-components/native";
 
+export const Container = styled.View`
+  flex: 1;
+  background-color: #ffffff;
+  padding: 0 22px;
+`;
+
 export const TableContainer = styled.View`
   flex: 1;
-  padding: 0 22px;
 `;
 
 export const Table = styled.View`

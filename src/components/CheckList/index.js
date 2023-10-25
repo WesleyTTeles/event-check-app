@@ -4,10 +4,11 @@ import { Feather } from "@expo/vector-icons";
 import { useRoute } from "@react-navigation/native";
 
 import { Text } from "../Text/Text";
-import { Container } from "../../pages/Home/styles";
-import { Table, TableContainer, IconAction } from "./styles";
+
+import { Table, TableContainer, IconAction, Container } from "./styles";
 
 import CardsInfoDetails from "../CardsInfoDetails";
+import SearchInput from "../SearchInput";
 
 export default function CheckList() {
   const route = useRoute();
@@ -34,9 +35,8 @@ export default function CheckList() {
         inscricaoAguardando={totalAguardando}
         inscricaoPresente={totalPresente}
       />
-      <Text style={{ marginLeft: 22 }} size={18} color={"#CDA35C"}>
-        Lista de Presença
-      </Text>
+
+      <SearchInput />
 
       <TableContainer>
         <Table>

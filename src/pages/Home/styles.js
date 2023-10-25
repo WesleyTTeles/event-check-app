@@ -9,8 +9,14 @@ export const Container = styled.SafeAreaView`
 `;
 
 export const Content = styled.View`
+  flex: 1;
   justify-content: center;
   align-items: center;
-  flex: 1;
   padding: 0 24px;
+`;
+
+export const ImageLogo = styled.Image`
+  width: 225px;
+  height: 80px;
+  margin-top: 12px;
 `;

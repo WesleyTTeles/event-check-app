@@ -8,14 +8,14 @@ import TableCafeeGestao from "../../pages/SubMenuEventos/CafeeGestao";
 import ProjetoGerminar from "../../pages/SubMenuEventos/ProjetoGerminar";
 import RenoGrupo from "../../pages/SubMenuEventos/RenoGrupo";
 import EventosAbertos from "../../pages/SubMenuEventos/EventosAbertos";
-import TableDetail from "../../components/TableDetail";
+import CheckList from "../../components/CheckList";
 
 const Stack = createStackNavigator();
 
 export const EventStackNavigator = () => (
   <Stack.Navigator>
     <Stack.Screen
-      name="Event"
+      name=" "
       component={Eventos}
       options={{ headerShown: false }}
     />
@@ -73,7 +73,7 @@ export const EventStackNavigator = () => (
     />
     <Stack.Screen
       name="CheckList"
-      component={TableDetail}
+      component={CheckList}
       options={{
         headerTitleStyle: {
           color: "#605F69",

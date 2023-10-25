@@ -1,11 +1,13 @@
 import React from "react";
-import { Text } from "../Text/Text";
-import { Feather } from "@expo/vector-icons";
 import { FlatList, View } from "react-native";
+import { Feather } from "@expo/vector-icons";
+import { useRoute } from "@react-navigation/native";
+
+import { Text } from "../Text/Text";
 import { Container } from "../../pages/Home/styles";
 import { Table, TableContainer, IconAction } from "./styles";
+
 import CardsInfoDetails from "../CardsInfoDetails";
-import { useRoute } from "@react-navigation/native";
 
 export default function CheckList() {
   const route = useRoute();

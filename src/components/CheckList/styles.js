@@ -3,7 +3,6 @@ import styled from "styled-components/native";
 export const TableContainer = styled.View`
   flex: 1;
   padding: 0 22px;
-  margin-top: 10px;
 `;
 
 export const Table = styled.View`

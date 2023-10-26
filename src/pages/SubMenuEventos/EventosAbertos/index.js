@@ -8,10 +8,9 @@ import { Text } from "../../../components/Text/Text";
 import { Container, InfoTabela } from "../styles";
 
 export default function TableEventosAbertos() {
-  const navigation = useNavigation(); // Obtenha o objeto de navegação
+  const navigation = useNavigation();
 
   const handleTablePress = (tabelaId) => {
-    // Navegue para a página de detalhes de inscrições (TableDetail) com o identificador da tabela selecionada
     navigation.navigate("CheckList", {
       tabelaId,
       eventosabertos: eventosabertos[tabelaId],
@@ -22,7 +21,9 @@ export default function TableEventosAbertos() {
 
   return (
     <Container>
-      <Text size={18} color={'#CDA35C'}>Tabela de inscrições</Text>
+      <Text size={18} color={"#CDA35C"}>
+        Tabela de inscrições
+      </Text>
       <FlatList
         data={tableKeys}
         keyExtractor={(tabelaId) => tabelaId}

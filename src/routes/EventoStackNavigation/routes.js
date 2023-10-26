@@ -1,6 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons } from "@expo/vector-icons";
 
 import Eventos from "../../pages/Eventos";
 import TableCafeeGestao from "../../pages/SubMenuEventos/CafeeGestao";
@@ -57,7 +57,6 @@ export const EventStackNavigator = () => (
         ),
       }}
     />
-
     <Stack.Screen
       name="Reno Grupo"
       component={TableRenoGrupo}

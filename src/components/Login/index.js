@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { CheckBox } from "react-native-elements";
 import { FontAwesome } from "@expo/vector-icons";
-
 import logo from "../../assets/images/logo.png";
 
 import { Text } from "../Text/Text";
@@ -19,12 +18,9 @@ import {
   RememberPassword,
 } from "./styles";
 
-
-
-
-
 export default function Login() {
-  const [input, setInput] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
   const [hidePassword, setHidePassword] = useState(true);
 
   return (
@@ -40,7 +36,13 @@ export default function Login() {
           <IconArea>
             <FontAwesome name="envelope" size={20} color="#cda35c" />
           </IconArea>
-          <Input placeholder="meuemail@meudominio.com.br" />
+          <Input
+            placeholder="meuemail@meudominio.com.br"
+            value={email}
+            onChangeText={(text) => {
+              setEmail(text);
+            }}
+          />
         </InputArea>
 
         <Text weight="600" style={{ marginLeft: 6 }}>
@@ -54,9 +56,9 @@ export default function Login() {
           <Input
             placeholder="Insira sua Senha"
             secureTextEntry={hidePassword}
-            value={input}
+            value={password}
             onChangeText={(text) => {
-              setInput(text);
+              setPassword(text);
             }}
           />
           <IconTouch

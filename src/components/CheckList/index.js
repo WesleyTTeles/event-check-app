@@ -4,7 +4,14 @@ import { Feather } from "@expo/vector-icons";
 import { useRoute } from "@react-navigation/native";
 
 import { Text } from "../Text/Text";
-import { Table, TableContainer, IconAction, Container, Tr, ViewName } from "./styles";
+import {
+  Table,
+  TableContainer,
+  IconAction,
+  Container,
+  Tr,
+  ViewName,
+} from "./styles";
 
 import CardsInfoDetails from "../CardsInfoDetails";
 import SearchInput from "../SearchInput";
@@ -62,7 +69,7 @@ export default function CheckList() {
                 </Tr>
               </ViewName>
               <Tr>
-                <Text style={{ textAlign: "center" }} >{inscricao.status}</Text>
+                <Text style={{ textAlign: "center" }}>{inscricao.status}</Text>
               </Tr>
               <IconAction>
                 <Feather name="check-circle" size={22} color="#43A53B" />
@@ -71,6 +78,6 @@ export default function CheckList() {
           )}
         />
       </TableContainer>
-    </Container >
+    </Container>
   );
 }

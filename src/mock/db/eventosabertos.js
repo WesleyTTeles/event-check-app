@@ -173,4 +173,48 @@ export const eventosabertos = {
       status: "presente",
     },
   ],
+  inscricoes_Natal_25_12_23: [
+    {
+      id: 1,
+      tableId: "inscricoes_Natal_25_12_23",
+      name: "Lucas",
+      email: "wesley.teixeira.civil@gmail.com",
+      status: "aguardando",
+    },
+    {
+      id: 2,
+      tableId: "inscricoes_Natal_25_12_23",
+      name: "Ana",
+      email: "ana@email.com",
+      status: "aguardando",
+    },
+    {
+      id: 3,
+      tableId: "inscricoes_Natal_25_12_23",
+      name: "Rafael",
+      email: "rafael@email.com",
+      status: "presente",
+    },
+    {
+      id: 4,
+      tableId: "inscricoes_Natal_25_12_23",
+      name: "Mariana",
+      email: "mariana@email.com",
+      status: "aguardando",
+    },
+    {
+      id: 5,
+      tableId: "inscricoes_Natal_25_12_23",
+      name: "João",
+      email: "joao@email.com",
+      status: "presente",
+    },
+    {
+      id: 6,
+      tableId: "inscricoes_Natal_25_12_23",
+      name: "Luiz",
+      email: "joao@email.com",
+      status: "presente",
+    },
+  ],
 };

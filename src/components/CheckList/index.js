@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from "react";
-import { FlatList } from "react-native";
+import { FlatList, TouchableOpacity, View } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { useRoute } from "@react-navigation/native";
-
+import Modal from "react-native-modal";
+import CustomModal from "../CustomModal/CustomModal";
 import { Text } from "../Text/Text";
 import {
   Table,
@@ -11,6 +12,12 @@ import {
   Container,
   Tr,
   ViewName,
+  ConfirmContainer,
+  TextConfirm,
+  ConfirmButton,
+  TextConfirmButton,
+  CancelButton,
+  TextCancelButton,
 } from "./styles";
 
 import CardsInfoDetails from "../CardsInfoDetails";
@@ -32,6 +39,20 @@ export default function CheckList() {
       return counts;
     }, {});
   }, [list]);
+
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const showModal = () => {
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
+
+  const handleConfirm = () => {
+    closeModal();
+  };
 
   return (
     <Container>
@@ -71,9 +92,14 @@ export default function CheckList() {
               <Tr>
                 <Text style={{ textAlign: "center" }}>{inscricao.status}</Text>
               </Tr>
-              <IconAction>
+              <IconAction onPress={showModal}>
                 <Feather name="check-circle" size={22} color="#43A53B" />
               </IconAction>
+              <CustomModal
+                visible={modalVisible}
+                onClose={closeModal}
+                onConfirm={handleConfirm}
+              />
             </Table>
           )}
         />

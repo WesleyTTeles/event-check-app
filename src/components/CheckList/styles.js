@@ -17,17 +17,16 @@ export const Table = styled.View`
   align-items: center;
   margin: 5px 0;
   border-width: 0 0 1px 0;
-  border-color: #606F7E;
+  border-color: #606f7e;
   padding: 5px 0;
 `;
 
 export const Tr = styled.View`
-width: 80px;
+  width: 80px;
 `;
 
 export const ViewName = styled.View`
-align-items: left;
-
+  align-items: left;
 `;
 
 export const IconAction = styled.TouchableOpacity`

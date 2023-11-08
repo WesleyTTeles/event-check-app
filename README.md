@@ -2,9 +2,15 @@
 
 ![Logo do Event Check App](src/assets/images/Layout.png)
 
-Essa aplicação foi um desafio da matéria de desenvolvimento de aplicativo onde a nota final era criar um projeto que atendesse uma necessidade do mundo real, sendo assim, foi escolhido uma empresa que possui um site que alguns eventos que são realizados durante o ano porém sem muito controle na hora de contabilizar as pessoas e sem a possibilidade de check-in de cada um.
+Essa aplicação foi um desafio da matéria de desenvolvimento de aplicativo onde a nota final era criar um grupo de 3 pessoas para desenvolver um projeto que atendesse uma necessidade do mundo real.
 
-O Event Check App é uma aplicação que gerencia eventos e inscricoes de eventos realizados permitindo que o usuário possa acessar cada evento que está sendo criado no site dele e assim poder contabilizar quantas pessoas foram inscritas e permitindo tambem realizar um check-in de cada pessoa inscrita nos eventos.
+## Sobre o Parceiro
+
+A Família Renovada do Sol Nascente realiza eventos ao longo do ano, nos quais é necessário que as pessoas se inscrevam em cada evento por meio de um site próprio. Isso é feito para que seja possível saber quantas pessoas estão inscritas, realizar um check-in, gerenciar o espaço e, ao término do evento, gerar um relatório para discutir como o evento foi.
+
+## Sobre o Projeto
+
+O Event Check App é uma aplicação que gerencia eventos e inscrições de eventos realizados permitindo que o usuário possa acessar cada evento que está sendo criado no site dele e assim poder contabilizar quantas pessoas foram inscritas e permitindo também realizar um check-in de cada um inscrito.
 
 Esta aplicação é construída com React Native e um mock (Banco de dados Fake) como banco, que é uma forma de visualizar os dados sem tem um banco de dados.
 

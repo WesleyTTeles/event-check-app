@@ -21,10 +21,19 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.wesleyteles.eventcheck"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "12458abc-d41c-42be-a8fa-a06399bc19d6"
       }
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/12458abc-d41c-42be-a8fa-a06399bc19d6"
     }
   }
 }
